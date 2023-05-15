@@ -7,7 +7,7 @@
 	<title>Alex Radu - Software Developer</title>
 </svelte:head>
 <main>
-	
+
 	<h1>Hi!✋ <br /> I'm Alex, a software engineer based in Romania 🌍</h1>
 	<div class="icons">
 		<a

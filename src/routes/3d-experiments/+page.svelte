@@ -1,9 +1,6 @@
 <script>
-    import { T } from '@threlte/core'
-  </script>
-  
-<T.Mesh>
-    <T.BoxGeometry args={[1, 2, 1]} />
-    <T.MeshBasicMaterial />
-</T.Mesh>
-  
+	import DemoScene from "$lib/3d/DemoScene.svelte";
+
+</script>
+
+<DemoScene></DemoScene>
