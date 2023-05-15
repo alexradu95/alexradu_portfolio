@@ -14,7 +14,7 @@
 				renderer.setAnimationLoop(() => renderer.render(scene, get(camera)))
 			}
 		});
-    } else{
+    } else {
 		console.log("Navigator is not defined");
 	}
 </script>
