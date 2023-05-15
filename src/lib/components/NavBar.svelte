@@ -20,10 +20,6 @@
 	{
 		href: '/3d-experiments',
 		label: '3D Experiments 🧿'
-	},
-	{
-		href: '/terminal',
-		label: 'Terminal ⌨️'
 	}
 ];
 
