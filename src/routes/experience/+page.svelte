@@ -1,163 +1,48 @@
 <script>
 	import projects from '$lib/data/WorkExperience';
-</script>
-
-<svelte:head>
+  </script>
+  
+  <svelte:head>
 	<title>Alex Radu — Projects</title>
-</svelte:head>
-
-<div class="projectContainer">
-	<div class="projects">
-		<h1>Work Experience</h1>
-		{#each projects as project}
-			<div class="project">
-				<div class="header">
-					<h2>
-						{project.title}
-					</h2>
-					<div class="techsContainer">
-						Technologies:
-						<div class="techs">
-							{#each project.technologies as tech}
-								<div>{tech}</div>
-							{/each}
-						</div>
-					</div>
-					<div class="techsContainer">
-						Languages:
-						<div class="techs">
-							{#each project.languages as lang}
-								<div>{lang}</div>
-							{/each}
-						</div>
-					</div>
-				</div>
-				<ul>
-					{#each project.description as line}
-					   <li>{line}</li>
-					{/each}
-					
-				</ul>
-				{#if project.url}
-					<a href={project.url} target="_blank" rel="noreferrer">
-						<div class="button">Company website =></div>
-					</a>
-				{/if}
+  </svelte:head>
+  
+  <div class="container mx-auto py-8">
+	<div class="space-y-8">
+	  <h1 class="text-3xl font-bold">Work Experience</h1>
+	  {#each projects as project}
+	  <div class="bg-gray-800 text-white p-6 rounded-lg">
+		<div class="space-y-4">
+		  <h2 class="text-xl">{project.title}</h2>
+		  <div class="flex flex-wrap gap-2">
+			<span class="text-gray-300">Technologies:</span>
+			<div class="flex gap-2">
+			  {#each project.technologies as tech}
+			  <div class="bg-gray-600 py-1 px-2 rounded">{tech}</div>
+			  {/each}
 			</div>
-		{/each}
+		  </div>
+		  <div class="flex flex-wrap gap-2">
+			<span class="text-gray-300">Languages:</span>
+			<div class="flex gap-2">
+			  {#each project.languages as lang}
+			  <div class="bg-gray-600 py-1 px-2 rounded">{lang}</div>
+			  {/each}
+			</div>
+		  </div>
+		  <ul class="list-disc list-inside">
+			{#each project.description as line}
+			<li>{line}</li>
+			{/each}
+		  </ul>
+		  {#if project.url}
+		  <a href={project.url} target="_blank" rel="noreferrer">
+			<div class="flex items-center justify-center mt-4 text-white border-2 border-white rounded-md py-2 px-4">
+			  Company website =>
+			</div>
+		  </a>
+		  {/if}
+		</div>
+	  </div>
+	  {/each}
 	</div>
-</div>
-
-<style>
-	.projectContainer {
-		width: 100%;
-		max-width: 900px;
-		display: flex;
-		justify-content: center;
-		box-sizing: border-box;
-		text-align: center;
-		padding: 1em;
-		margin: 0 auto;
-		text-align: center;
-	}
-
-	a {
-		text-decoration: none;
-	}
-
-	.projectContainer .projects {
-		display: grid;
-		grid-template-columns: 1fr;
-		grid-gap: 40px;
-		margin-top: 30px;
-	}
-
-	h1 {
-		font-weight: 700;
-		text-align: start;
-	}
-
-	h2 {
-		display: flex;
-		margin: 0;
-	}
-
-	.project {
-		text-align: start;
-		box-sizing: border-box;
-		display: flex;
-		flex-direction: column;
-		color: white;
-		background: #111;
-		padding: 2rem;
-		width: 100%;
-		border-radius: 5px;
-		transition: transform 0.2s ease-in-out;
-		border-radius: 25px;
-	}
-
-	li {
-		font-weight: 100;
-		color: #708090;
-	}
-
-	.projects {
-		width: 100%;
-		margin: 50px auto;
-		display: grid;
-		grid-gap: 1rem;
-		grid-template-columns: 1fr;
-		margin-bottom: 10px;
-	}
-
-	.techsContainer {
-		display: flex;
-		flex-wrap: wrap;
-		gap: 10px;
-	}
-
-	.techs {
-		display: flex;
-		justify-content: space-between;
-		align-items: center;
-	}
-	.techs > div {
-		margin: 0 0 0 10px;
-	}
-
-	.button {
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		color: white;
-		border: 2px solid white;
-		padding: 10px;
-	}
-
-	@media (min-width: 900px) {
-		.projectContainer {
-			padding: 0;
-		}
-		.projects > h1 {
-			font-size: 48px;
-			margin: 50px 0 0 0;
-		}
-
-		.projects {
-			grid-template-columns: 1fr;
-		}
-
-		.projects .project {
-			min-height: 200px;
-		}
-		.button {
-			max-width: 200px;
-		}
-	}
-
-	@media (min-width: 600px) {
-		.projects {
-			grid-template-columns: 1fr;
-		}
-	}
-</style>
+  </div>
