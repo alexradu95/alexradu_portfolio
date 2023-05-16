@@ -1,41 +1,61 @@
 <script>
     import Logo from '$lib/assets/logo.svg';
+    import routes from '$lib/data/NavRoutes';
 
-    const routes = [
-        {
-            href: '/',
-            label: 'Home 🏠'
-        },
-        {
-            href: '/experience',
-            label: 'Experience 🧠'
-        },
-        {
-            href: '/about',
-            label: 'About 🙋🏽‍♂️'
-        },
-        {
-            href: '/3d-experiments',
-            label: '3D Experiments 🧿'
-        }
-    ];
+    export let segment;
 </script>
 
-
 <nav class="dark:bg-black">
-	<div class="flex flex-wrap items-center justify-between mx-auto p-4">
-        <a href="/">
+    <div class="flex items-center justify-between mx-auto p-4">
+        <a href="/" class="hidden md:block">
             <img src={Logo} alt="logo" class="cursor-pointer h-8 w-8" />
         </a>
-	  <div class="w-full md:block md:w-auto" id="navbar-default">
-		<ul class="font-medium flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
-			{#each routes as route}
-				<li>
-					<a href="{route.href}" class="block py-2 pl-3 pr-4 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 dark:text-white md:dark:text-blue-500" aria-current="page">{route.label}</a>
-				</li>
-			{/each}
-		</ul>
-	  </div>
-	</div>
-  </nav>
+        <div class="w-full md:flex md:items-center md:w-auto">
+            <ul class="font-medium flex flex-col space-y-4 md:flex-row md:space-x-8 md:space-y-0">
+                {#each routes as route}
+                    <li>
+                        <a
+                            href="{route.href}"
+                            class={`block px-4 py-2 text-white rounded-md text-lg font-mono md:bg-transparent md:px-2 md:py-1 dark:text-white md:dark:text-blue-500 ${
+                                segment === route.href ? 'bg-blue-700 active-link' : ''
+                            }`}
+                            aria-current="page"
+                        >
+                            {#if route.emoticon}
+                                <span class={segment === route.href ? 'glowing-emoticon' : ''}>
+                                    {route.emoticon}
+                                </span>
+                            {/if}
+                            {route.label}
+                        </a>
+                    </li>
+                {/each}
+            </ul>
+        </div>
+    </div>
+</nav>
 
+<style>
+    .glowing-emoticon {
+        animation: glowing 2s ease-in-out infinite;
+    }
+
+    @keyframes glowing {
+        0% {
+            opacity: 1;
+        }
+
+        50% {
+            opacity: 0.5;
+        }
+
+        100% {
+            opacity: 1;
+        }
+    }
+
+    .active-link {
+        background-color: #1f2937;
+        color: #60a5fa;
+    }
+</style>
