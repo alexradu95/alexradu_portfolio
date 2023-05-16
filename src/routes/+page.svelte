@@ -1,75 +1,27 @@
 <script>
-	import FaLinkedin from 'svelte-icons/fa/FaLinkedin.svelte';
-	import FaGithub from 'svelte-icons/fa/FaGithub.svelte';
-</script>
+	import { T, useFrame } from '@threlte/core'
+	import { interactivity } from '@threlte/extras'
+	import { spring } from 'svelte/motion'
+  
+	interactivity()
+	const scale = spring(1)
+	let rotation = 0
+	useFrame((state, delta) => {
+	  rotation += delta
+	})
+  </script>
+  
 
-<svelte:head>
-	<title>Alex Radu - Software Developer</title>
-</svelte:head>
-<main>
-
-	<h1>Hi!✋ <br /> I'm Alex, a software engineer based in Romania 🌍</h1>
-	<div class="icons">
-		<a
-			href="https://github.com/alexradu95/"
-			aria-label="GitHub"
-			target="_blank"
-			rel="noopener noreferrer"
-		>
-			<div class="icon">
-				<FaGithub />
-			</div>
-		</a>
-		<a
-			href="https://www.linkedin.com/in/radualexandrucosmin/"
-			aria-label="Linkedin"
-			target="_blank"
-			rel="noopener noreferrer"
-		>
-			<div class="icon">
-				<FaLinkedin />
-			</div>
-		</a>
-	</div>
-</main>
-
-<style>
-	a {
-		color: white;
-		text-decoration: none;
-	}
-
-	main {
-		text-align: center;
-		padding: 0;
-		margin: 0 auto;
-		text-align: center;
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		align-items: center;
-	}
-
-	.icons {
-		display: flex !important;
-		justify-content: center !important;
-		align-items: center;
-		gap: 20px;
-		cursor: pointer;
-		font-size: 30px;
-		display: flex;
-		justify-content: space-between;
-		max-width: 200px;
-		margin: 50px auto 0;
-	}
-
-	.icon {
-		cursor: pointer;
-		transition: color 0.2s ease-in-out;
-		width: 40px;
-	}
-	
-	.icon:hover {
-		color: #ca3c25;
-	}
-</style>
+  <T.DirectionalLight position={[3, 10, 7]} />
+  
+  <T.Mesh
+	rotation.y={rotation}
+	position.y={1}
+	scale={$scale}
+	on:pointerenter={() => scale.set(1.5)}
+	on:pointerleave={() => scale.set(1)}
+  >
+	<T.BoxGeometry args={[1, 2, 1]} />
+	<T.MeshStandardMaterial color="green" />
+  </T.Mesh>
+  
