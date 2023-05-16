@@ -4,17 +4,28 @@
     import '../app.css';
 </script>
 
-<div class="flex flex-col min-h-screen max-w-screen-lg mx-auto">
-    <header class="sticky top-0 z-10">
+<!-- 
+    Flexbox offers powerful features for building flexible and responsive layouts without relying heavily on manual 
+    calculations or complex positioning techniques. It simplifies the process of creating both simple and complex designs, 
+    adapting to different screen sizes and accommodating varying content sizes.
+-->
+<!-- 
+    When you apply the .mx-auto class to an element, it sets the left and right margins to auto, which automatically distributes 
+    the available horizontal space equally on both sides of the element. This results in the element being horizontally centered within 
+    its parent container.
+-->
+
+<div class="flex flex-col min-h-screen mx-auto max-w-screen-lg">
+    <header class="top-0">
         <Navbar segment="{$page.url.pathname}" />
     </header>
 
-    <main class="flex flex-grow overflow-y-auto text-white justify-center items-center">
+    <main class="flex flex-grow overflow-y-auto">
         <slot />
     </main>
 
     <!-- Footer -->
-    <footer class="sticky bottom-0 text-white text-center py-4">
-
+    <footer class="bottom-0">
+       <h1>Footer</h1>
     </footer>
 </div>
