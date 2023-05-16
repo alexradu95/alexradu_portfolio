@@ -4,7 +4,7 @@
     import '../app.css';
 </script>
 
-<div class="flex flex-col min-h-screen">
+<div class="flex flex-col min-h-screen max-w-screen-xl mx-auto">
     <header class="sticky top-0 z-10">
         <Navbar segment={$page.url.pathname} />
     </header>
@@ -18,3 +18,5 @@
         <h1>This will be the footer</h1>
     </footer>
 </div>
+
+
