@@ -10,9 +10,7 @@
     </header>
 
     <main class="flex flex-grow overflow-y-auto text-white justify-center items-center">
-        <div class="flex-grow">
-            <slot />
-        </div>
+        <slot />
     </main>
 
     <!-- Footer -->
