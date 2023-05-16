@@ -9,16 +9,12 @@ const routes = [
         label: 'Experience',
         emoticon: '😊' // Add an emoticon for the Experience link
     },
-    {
-        href: '/about',
-        label: 'About',
-        emoticon: '👍' // Add an emoticon for the About link
-    },
-    {
-        href: '/3d-experiments',
-        label: '3D',
-        emoticon: '🌟' // Add an emoticon for the 3D link
-    },
-];
+    // {
+    //     href: '/about',
+    //     label: 'About',
+    //     emoticon: '👍' // Add an emoticon for the About link
+    // }
+]
+
 
 export default routes;
