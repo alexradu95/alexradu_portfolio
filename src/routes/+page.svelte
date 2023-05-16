@@ -7,7 +7,6 @@
 	<title>Alex Radu - Software Developer</title>
   </svelte:head>
   
-  <main class="flex flex-col items-center justify-center">
 	<div>
 	  <h1 class="text-center">Hi!✋ <br /> I'm Alex, a software engineer based in Romania 🌍</h1>
 	  <h1 class="text-center">The styling is broken right now, I'm trying to implement Tailwind.css</h1>
@@ -37,5 +36,4 @@
 		</a>
 	  </div>
 	</div>
-  </main>
   
