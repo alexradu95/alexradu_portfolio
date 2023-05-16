@@ -4,13 +4,17 @@
     import '../app.css';
 </script>
 
-<!-- Header -->
-<Navbar segment={$page.url.pathname} />
+<div class="flex flex-col min-h-screen">
+    <header class="sticky top-0 z-10">
+        <Navbar segment={$page.url.pathname} />
+    </header>
 
-<!-- Main -->
-<slot />
+    <main class="flex-grow overflow-y-auto bg-black text-white">
+        <slot />
+    </main>
 
-<!-- Footer -->
-<footer class="text-white text-base font-normal py-8 max-w-900 text-center w-full">
-    <!-- add stuff to footer if needed -->
-</footer>
+    <!-- Footer -->
+    <footer class="sticky bottom-0 bg-black text-white text-center py-4">
+        <h1>This will be the footer</h1>
+    </footer>
+</div>
