@@ -2,6 +2,12 @@
     import { openedApps } from '$lib/data/Applications.js';
     import Panel from "$lib/components/panel/Panel.svelte";
     import { scale } from 'svelte/transition';
+    import { onMount } from 'svelte';
+    import Welcome from '../lib/apps/Welcome.svelte';
+
+    onMount(async () => {
+		$openedApps = [...$openedApps, {id: "Welcome", app: Welcome}];
+	});
 </script>
 
 <div class="w-screen h-screen bg-gradient-to-br from-pink-500 to-cyan-500 relative" 
