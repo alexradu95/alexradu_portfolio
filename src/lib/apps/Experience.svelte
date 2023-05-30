@@ -3,10 +3,6 @@
     import App from "$lib/components/application/App.svelte";
 </script>
 
-<svelte:head>
-	<title>Alex Radu — Projects</title>
-</svelte:head>
-
 <App title="Experience" width="4/6" height="4/6">
     <div class="space-y-8">
         {#each projects as project}

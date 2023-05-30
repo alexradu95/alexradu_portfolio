@@ -13,11 +13,6 @@ export let availableApps = readable([
         icon: "✋"
     },
     {
-        id: "About",
-        component: About,
-        icon: "🧔‍♂️"
-    },
-    {
         id: "Experience",
         component: Experience,
         icon: "🧠"
