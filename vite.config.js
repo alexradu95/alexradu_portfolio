@@ -5,9 +5,6 @@ import { vitePreprocess } from '@sveltejs/kit/vite';
 /** @type {import('vite').UserConfig} */
 const config = {
 	plugins: [sveltekit()],
-	ssr: {
-		noExternal: ['three']
-	},
 	preprocess: vitePreprocess()
 };
 
