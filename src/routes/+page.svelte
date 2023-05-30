@@ -10,8 +10,7 @@
 	});
 </script>
 
-<div class="w-screen h-screen bg-gradient-to-br from-pink-500 to-cyan-500 relative" 
-    transition:scale={{ duration: 400 }}>
+<div class="w-screen h-screen bg-gradient-to-br from-pink-500 to-cyan-500 relative" transition:scale={{ duration: 400 }}>
     
     <Panel />
 

@@ -19,10 +19,8 @@
     }
 </script>
 
-<div class="bg-gray-900 bg-opacity-25 h-12 w-screen fixed top-0 flex items-center justify-between backdrop-filter backdrop-blur-md text-white">
-    <div class="flex items-center justify-between">
-        <button class="w-8 h-8 m-3 rounded-lg transition-transform duration-300 hover:scale-150" on:click={() => { openApp(Launcher, "Launcher") }}>
-            🪟
-        </button>
-    </div>
+<div class="bg-gray-900 bg-opacity-25 w-screen fixed top-0 flex">
+    <button class="mx-3 mt-2 mb-3 transition-transform duration-300 hover:scale-150" on:click={() => { openApp(Launcher, "Launcher") }}>
+        <span class="text-2xl">🏠</span>
+    </button>
 </div>
