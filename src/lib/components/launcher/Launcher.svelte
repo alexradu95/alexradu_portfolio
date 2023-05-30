@@ -25,12 +25,7 @@
     };
   </script>
   
-  <style>
-    .apps-container {
-      max-height: 80vh;
-      overflow-y: auto;
-    }
-  </style>
+
   
   <!-- svelte-ignore a11y-click-events-have-key-events -->
   <div
