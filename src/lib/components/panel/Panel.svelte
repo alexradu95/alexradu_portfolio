@@ -1,6 +1,7 @@
 <script>
     import { openedApps } from '../../data/Applications.js';
     import Launcher from '$lib/components/launcher/Launcher.svelte';
+    import Icon from '@iconify/svelte';
 
     const check = (appName) => {
         for (let i = 0; i < $openedApps.length; i++) {
@@ -20,7 +21,7 @@
 </script>
 
 <div class="bg-gray-900 bg-opacity-25 w-screen fixed top-0 flex">
-    <button class="mx-3 mt-2 mb-3 transition-transform duration-300 hover:scale-150" on:click={() => { openApp(Launcher, "Launcher") }}>
-        <span class="text-2xl">🏠</span>
+    <button class="mx-5 my-3 transition-transform duration-300 hover:scale-125" on:click={() => { openApp(Launcher, "Launcher") }}>
+        <Icon icon="bi:circle" color="white" width="24" height="24" />
     </button>
 </div>
