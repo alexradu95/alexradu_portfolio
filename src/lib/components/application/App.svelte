@@ -4,8 +4,7 @@
     import { draggable } from '@neodrag/svelte';
 
     export let title = "App";
-    export let height = 96;
-    export let width = 96;
+    export let resizable = true;
 
 
     const closeApp = () => {
@@ -17,7 +16,7 @@
     in:scale
     out:fade={{ duration: 400 }}
     use:draggable={{ handle: '.titlebar' }}
-    class="bg-gray-900 text-white h-{height} w-{width} absolute inset-1/4 resize overflow-hidden shadow-md rounded-lg"
+    class="bg-gray-900 text-white absolute inset-1/4 {resizable ? "resize" : ""} overflow-auto shadow-md rounded-lg"
     id="parent">
     
     <div class="flex flex-col h-full">

@@ -6,16 +6,16 @@
     let current = 0;
 </script>
 
-<App title="Experience" width="4/6" height="4/6">
-    <div class="grid grid-cols-3 overflow-x-scroll snap-x-mandatory h-auto">
-        <div class="col-span-1 bg-gray-800 text-white p-6 rounded-lg">
+<App title="Experience" resizable={false}>
+    <div class="flex h-auto">
+        <div class="bg-gray-800 text-white p-6 rounded-lg z-10 mr-3 overflow-y-auto max-h-full sticky top-0">
             {#each projects as project, index}
-                <div class="flex items-center gap-2 cursor-pointer" on:click={() => current = index}>
+                <div class="flex items-center justify-center h-[48px] w-[48px] cursor-pointer" on:click={() => current = index}>
                     🧿
                 </div>
             {/each}
         </div>
-        <div class="col-span-2">
+        <div class="flex-1 relative">
             {#if projects[current]}
                 <ExperienceItem project={projects[current]} />
             {/if}
