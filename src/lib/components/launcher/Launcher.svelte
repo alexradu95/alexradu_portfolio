@@ -38,7 +38,7 @@
         {#each $availableApps as app}
         <!-- svelte-ignore a11y-click-events-have-key-events -->
         <div
-          class="m-5 w-32 h-32 rounded-lg bg-gray-100 bg-opacity-10 flex flex-col items-center justify-center p-2 transition-transform hover:scale-125"
+          class="m-5 w-32 h-32 rounded-lg bg-gray-100 bg-opacity-10 flex flex-col items-center justify-center p-2 transition-transform hover:scale-110"
           on:click={() => openApp(app.component, app.id)}
         >
           <div class="text-white text-7xl">{app.icon}</div>
