@@ -1,7 +1,6 @@
 <script>
     import App from "$lib/components/application/App.svelte";
-    import Icon from '@iconify/svelte';
-    import SocialMedia from '$lib/data/SocialMedia.js'
+    import SocialMediaButtons from "../components/widgets/SocialMediaButtons.svelte";
 </script>
 
 <App title="Welcome">
@@ -18,11 +17,7 @@
         </ol>
 
         <h3 class="text-xl font-bold mt-4">You can find me on the following websites:</h3>
+        <SocialMediaButtons size=40></SocialMediaButtons>
 
-        <div class="flex mt-4">
-            {#each SocialMedia as socialMediaWebsite}
-                <a href="{socialMediaWebsite.href}" target="_blank" rel="noopener noreferrer" class="btn mr-2 transform transition-transform hover:scale-110"><Icon icon="{socialMediaWebsite.icon}" width="50" height="50"/></a>
-            {/each}
-        </div>
     </div>
 </App>
