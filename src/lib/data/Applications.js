@@ -1,7 +1,7 @@
 import { writable, readable } from "svelte/store";
 
 import GodotWrapper from '$lib/apps/GodotWrapper.svelte';
-import Experience from '$lib/apps/Experience.svelte';
+import ExperienceApp from '$lib/apps/experience/ExperienceApp.svelte';
 import Welcome from '$lib/apps/Welcome.svelte';
 
 export let openedApps = writable([]);
@@ -14,7 +14,7 @@ export let availableApps = readable([
     },
     {
         id: "Experience",
-        component: Experience,
+        component: ExperienceApp,
         icon: "🧠"
     },
     {
