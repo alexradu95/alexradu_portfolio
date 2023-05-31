@@ -1,6 +1,7 @@
 <script>
   import { fade } from 'svelte/transition';
   import { openedApps, availableApps } from '$lib/data/Applications.js';
+  
 
   const check = (appName) => {
     for (let i = 0; i < $openedApps.length; i++) {
