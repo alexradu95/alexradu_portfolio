@@ -21,7 +21,7 @@
 
         <div class="flex mt-4">
             {#each SocialMedia as socialMediaWebsite}
-                <a href="{socialMediaWebsite.href}" target="_blank" rel="noopener noreferrer" class="btn mr-2"><Icon icon="{socialMediaWebsite.icon}" width="50" height="50"/></a>
+                <a href="{socialMediaWebsite.href}" target="_blank" rel="noopener noreferrer" class="btn mr-2 transform transition-transform hover:scale-110"><Icon icon="{socialMediaWebsite.icon}" width="50" height="50"/></a>
             {/each}
         </div>
     </div>
