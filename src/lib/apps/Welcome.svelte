@@ -1,5 +1,7 @@
 <script>
     import App from "$lib/components/application/App.svelte";
+    import Icon from '@iconify/svelte';
+    import SocialMedia from '$lib/data/SocialMedia.js'
 </script>
 
 <App title="Welcome">
@@ -18,9 +20,9 @@
         <h3 class="text-xl font-bold mt-4">You can find me on the following websites:</h3>
 
         <div class="flex mt-4">
-            <a href="https://github.com/alexradu95" target="_blank" rel="noopener noreferrer" class="btn mr-2">GitHub</a>
-            <a href="https://www.linkedin.com/in/radualexandrucosmin" target="_blank" rel="noopener noreferrer" class="btn mr-2">LinkedIn</a>
-            <!-- Add more buttons for other social media websites -->
+            {#each SocialMedia as socialMediaWebsite}
+                <a href="{socialMediaWebsite.href}" target="_blank" rel="noopener noreferrer" class="btn mr-2"><Icon icon="{socialMediaWebsite.icon}" width="50" height="50"/></a>
+            {/each}
         </div>
     </div>
 </App>
