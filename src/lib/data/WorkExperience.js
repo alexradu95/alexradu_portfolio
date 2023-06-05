@@ -18,7 +18,7 @@ const workExperience = [
 		icon: "medical-icon:laboratory"
 	},
 	{
-		companyName: "Siemens Corporate Technology",
+		companyName: "Siemens",
 		title: "Software Developer",
 		startDate: "Apr 2018",
 		endDate: "Feb 2022",
