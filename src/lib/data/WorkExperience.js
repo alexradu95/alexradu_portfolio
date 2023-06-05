@@ -1,5 +1,6 @@
 const workExperience = [
 	{
+		companyName: "Waters",
 		title: "Senior Software Engineer at Waters",
 		startDate: "Mar 2022",
 		endDate: "Present",
@@ -13,10 +14,12 @@ const workExperience = [
 			"Created and documented REST APIs for internal and external use.",
 			"Developed and executed unit tests, integration tests, and acceptance tests, ensuring code quality and reliability using XUnit and Specflow."
 			],
-		url: "https://www.waters.com/nextgen/us/en.html"
+		url: "https://www.waters.com/nextgen/us/en.html",
+		icon: "medical-icon:laboratory"
 	},
 	{
-		title: "Software Developer at Siemens Corporate Technology",
+		companyName: "Siemens Corporate Technology",
+		title: "Software Developer",
 		startDate: "Apr 2018",
 		endDate: "Feb 2022",
 		languages: ["C#", "Java", "TypeScript", "C++", "PowerShell"],
@@ -33,10 +36,12 @@ const workExperience = [
 			"Worked as a front-end Angular Developer on an internal tool, improving the user interface and user experience using Angular, NgRx, and RxJS.",
 			"Mentored and trained interns in C# and .NET using the Blazor framework."
 		],
-		url: "https://www.siemens.com/ro/ro.html"
+		url: "https://www.siemens.com/ro/ro.html",
+		icon: "simple-icons:siemens"
 		},
 		{
-			title: "Java Developer at FuelPlus Group",
+			companyName: "FuelPlus",
+			title: "Java Developer",
 			startDate: "Jan 2016",
 			endDate: "May 2018",
 			languages: ["Java", "TypeScript", "JavaScript", "PowerShell"],
@@ -46,7 +51,8 @@ const workExperience = [
 			"Utilized Java 7, the Spring 3 Framework, Liquibase, JPA, MySQL, Spring Batch, and Workflows with Activity for the backend.",
 			"Leveraged JavaScript, jQuery, and extJS by Sencha to provide users with an intuitive and responsive user interface on the frontend."
 			],
-			url: "https://skymetrix.com/"
+			url: "https://skymetrix.com/",
+			icon: "circum:airport-sign-1"
 			}
 ];
 
