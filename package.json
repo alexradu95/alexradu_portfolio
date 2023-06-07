@@ -22,6 +22,7 @@
 	"type": "module",
 	"dependencies": {
 		"@neodrag/svelte": "^2.0.3",
-		"@orillusion/core": "^0.6.4"
+		"@orillusion/core": "^0.6.4",
+		"aframe": "^1.4.2"
 	}
 }
