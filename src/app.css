@@ -1,6 +1,6 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-html, body, #__sveltekit_1 {
+html, body, #__sveltekit_1, #svelte {
     height: 100%;
 }
