@@ -25,15 +25,15 @@
       isLoading = false;
     }
   });
-
-  onMount(async () => {
-    if (!chat_ui.isChatLoaded()) {
-      await chat_ui.initChat(updateMessage);
-    }
-  });
 </script>
 
 <App title="Chat Application">
-    <ChatMessages {messages} />
-    <ChatInput {prompt} on:send={handleSend} class="fixed bottom-0 left-0 right-0" />
+    {#if isLoading}
+      <div class="flex items-center justify-center h-full">
+        <p class="text-white">Loading Model, please wait...</p>
+      </div>
+    {:else}
+      <ChatMessages {messages} />
+      <ChatInput {prompt} on:send={handleSend} class="fixed bottom-0 left-0 right-0" {isLoading} />
+    {/if}
 </App>
