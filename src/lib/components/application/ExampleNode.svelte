@@ -7,8 +7,8 @@
   }
 </script>
 
-<Node id="55" let:grabHandle let:selected on:nodeClicked="{handleClick}">
-  <div use:grabHandle class:selected class="my-component">
+<Node id="55" let:grabHandle let:selected on:nodeClicked={handleClick}>
+  <div use:grabHandle class:selected class="my-component" style="cursor: grab;">
     <span>Click Me</span>
   </div>
 </Node>
