@@ -3,7 +3,6 @@
   import { chat_ui, updateMessage, messages, prompt, runtimeStats } from "./ChatUI";
   import ChatInput from "./ChatInput.svelte";
   import ChatMessages from "./ChatMessages.svelte";
-  import App from '$lib/components/application/App.svelte';
 
   let isLoading = false;
 

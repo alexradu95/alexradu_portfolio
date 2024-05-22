@@ -69,6 +69,7 @@ export class ChatUI {
         const curDelta = chunk.choices[0].delta.content;
         if (curDelta) curMessage += curDelta;
         messageUpdate("left", curMessage, false);
+        console.log(curMessage)
       }
       const output = await this.engine.getMessage();
       this.chatHistory.push({ role: "assistant", content: output });
