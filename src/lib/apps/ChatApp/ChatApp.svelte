@@ -16,16 +16,24 @@
 </script>
 
 <App title="Chat Application">
-  <div class="flex flex-col items-center p-4 space-y-4 bg-gray-900 text-white min-h-screen">
-    <button class="chatui-btn bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-700" on:click={() => { chat_ui.asyncInitChat(updateMessage).catch((error) => console.log(error)); }}>
-      Download Model
-    </button>
-    <div class="chatui w-full max-w-2xl bg-gray-800 shadow-md rounded-lg p-4 flex flex-col space-y-4">
-      <div class="flex-grow overflow-y-auto">
-        <ChatMessages {messages} />
-      </div>
-      <ChatInput {prompt} on:send={handleSend} />
+  <div class="flex flex-col h-full">
+    <div class="titlebar flex items-center justify-between bg-gray-900 m-1 p-2 cursor-grab">
+      <span>Chat Application</span>
+      <button class="p-0 transition-colors duration-500 hover:text-red-500">✕</button>
     </div>
-    <ChatControls {runtimeStats} />
+    <div class="m-1 p-2 rounded-lg flex-grow overflow-y-auto">
+      <div class="flex flex-col items-center p-4 space-y-4 bg-gray-900 text-white min-h-screen">
+        <button class="chatui-btn bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-700" on:click={() => { chat_ui.asyncInitChat(updateMessage).catch((error) => console.log(error)); }}>
+          Download Model
+        </button>
+        <div class="chatui w-full max-w-2xl bg-gray-800 shadow-md rounded-lg p-4 flex flex-col space-y-4">
+          <div class="flex-grow overflow-y-auto">
+            <ChatMessages {messages} />
+          </div>
+          <ChatInput {prompt} on:send={handleSend} />
+        </div>
+        <ChatControls {runtimeStats} />
+      </div>
+    </div>
   </div>
 </App>
