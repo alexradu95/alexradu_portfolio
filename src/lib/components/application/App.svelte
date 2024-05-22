@@ -1,8 +1,9 @@
 <script>
 
-import {Svelvet} from "svelvet";
+    import {Node, Svelvet} from "svelvet";
 </script>
 
-<Svelvet style="width: 100vw; height: 100vh;">
-
+<Svelvet id="my-canvas" width="{500}" height="{500}" TD minimap controls locked>
+    <Node />
+    <Node id="alpha" bgColor="red" label="Default Node" />
 </Svelvet>
