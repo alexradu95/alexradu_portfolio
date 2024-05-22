@@ -13,14 +13,20 @@ import HelloNode from './HelloNode.svelte';
             Default Node
         </div>
     </Node>
-    <Node id="current-hour" bgColor="blue" label="Current Hour Node">
-        <CurrentHourNode />
+    <Node id="current-hour" bgColor="blue" label="Current Hour Node" let:grabHandle>
+        <div use:grabHandle style="cursor: grab;">
+            <CurrentHourNode />
+        </div>
     </Node>
-    <Node id="hello" bgColor="green" label="Hello Node">
-        <HelloNode />
+    <Node id="hello" bgColor="green" label="Hello Node" let:grabHandle>
+        <div use:grabHandle style="cursor: grab;">
+            <HelloNode />
+        </div>
     </Node>
-    <Node id="example" bgColor="yellow" label="Example Node">
-        <ExampleNode />
+    <Node id="example" bgColor="yellow" label="Example Node" let:grabHandle>
+        <div use:grabHandle style="cursor: grab;">
+            <ExampleNode />
+        </div>
     </Node>
 </Svelvet>
     import ExampleNode from './ExampleNode.svelte';
