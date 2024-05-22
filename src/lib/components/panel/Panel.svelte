@@ -18,6 +18,6 @@
 
 <div class="bg-gray-900 bg-opacity-25 w-screen fixed top-0 flex">
     <button class="mx-5 my-3 transition-transform duration-300 hover:scale-125" on:click={() => { openApp(Launcher, "Launcher") }}>
-        <Icon icon="bi:circle" color="white" width="24" height="24" />
+        <Icon icon="bi:circle" class="text-white" width="24" height="24" />
     </button>
 </div>

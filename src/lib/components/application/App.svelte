@@ -11,57 +11,22 @@
     }
 </script>
 
-<style>
-    .app-container {
-        background-color: #1a202c;
-        color: white;
-        position: absolute;
-        inset: 25%;
-        overflow: auto;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        border-radius: 0.5rem;
-    }
-
-    .titlebar {
-        background-color: #1a202c;
-        margin: 0.25rem;
-        padding: 0.5rem;
-        cursor: grab;
-    }
-
-    .close-button {
-        padding: 0;
-        transition: color 0.5s;
-    }
-
-    .close-button:hover {
-        color: #f56565;
-    }
-
-    .content {
-        margin: 0.25rem;
-        padding: 0.5rem;
-        border-radius: 0.5rem;
-        flex-grow: 1;
-        overflow-y: auto;
-    }
-</style>
 
 <div
     in:scale
     out:fade={{ duration: 400 }}
     use:draggable={{ handle: '.titlebar' }}
-    class="app-container {resizable ? "resize" : ""}"
+    class="absolute inset-1/4 overflow-auto shadow-lg rounded-lg bg-gray-800 text-white {resizable ? 'resize' : ''}"
     id="parent">
     
     <div class="flex flex-col h-full">
         <!-- Title bar -->
-        <div class="titlebar flex items-center justify-between">
+        <div class="bg-gray-800 m-1 p-2 cursor-grab flex items-center justify-between">
             <span>{title}</span>
-            <button class="close-button" on:click={closeApp}>✕</button>
+            <button class="p-0 transition-colors duration-500 hover:text-red-400" on:click={closeApp}>✕</button>
         </div>
         <!-- Window content -->
-        <div class="content">
+        <div class="m-1 p-2 rounded-lg flex-grow overflow-y-auto">
             <slot></slot>
         </div>
     </div>
