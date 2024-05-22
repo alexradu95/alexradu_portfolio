@@ -16,7 +16,7 @@
   };
 </script>
 
-<div class="chatui-inputarea flex items-center space-x-2">
+<div class="chatui-inputarea flex items-center space-x-2 bg-gray-800 p-4">
   <button class="chatui-btn bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-700" on:click={() => { chat_ui.asyncInitChat(updateMessage).catch((error) => console.log(error)); }}>
     Download Model
   </button>
