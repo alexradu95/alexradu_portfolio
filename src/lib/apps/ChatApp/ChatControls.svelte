@@ -9,9 +9,9 @@
   };
 </script>
 
-<div class="chatui-extra-control">
-  <button class="chatui-btn" on:click={handleReset}>
+<div class="chatui-extra-control flex flex-col items-center space-y-2">
+  <button class="chatui-btn bg-red-500 text-white py-2 px-4 rounded hover:bg-red-700" on:click={handleReset}>
     Reset Chat
   </button>
-  <label id="chatui-info-label">{$runtimeStats}</label>
+  <label id="chatui-info-label" class="text-gray-600">{$runtimeStats}</label>
 </div>

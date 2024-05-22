@@ -11,14 +11,14 @@
   };
 </script>
 
-<div class="chatui-inputarea">
+<div class="chatui-inputarea flex items-center space-x-2">
   <input
     id="chatui-input"
     type="text"
-    class="chatui-input"
+    class="chatui-input flex-grow p-2 border border-gray-300 rounded"
     placeholder="Enter your message..."
     on:keydown={(event) => { if (event.key === "Enter") handleSend(); }}
     bind:value={$prompt}
   />
-  <button class="chatui-btn" on:click={handleSend}> Send </button>
+  <button class="chatui-btn bg-green-500 text-white py-2 px-4 rounded hover:bg-green-700" on:click={handleSend}> Send </button>
 </div>
