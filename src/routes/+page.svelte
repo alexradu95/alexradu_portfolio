@@ -10,12 +10,12 @@
 	});
 </script>
 
-<Svelvet>
-    <div class="w-screen h-screen bg-gradient-to-b from-pink-500 to-cyan-500 relative" transition:scale={{ duration: 400 }}>
+<div class="w-screen h-screen bg-gradient-to-b from-pink-500 to-cyan-500 relative" transition:scale={{ duration: 400 }}>
+    <Svelvet>
         <Panel />
 
         {#each $openedApps as openedApp}
             <svelte:component this={openedApp.app} />
         {/each}
-    </div>
-</Svelvet>
+    </Svelvet>
+</div>
