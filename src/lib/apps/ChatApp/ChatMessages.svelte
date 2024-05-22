@@ -8,8 +8,8 @@
 <div class="flex flex-col space-y-2 p-2 bg-gray-900 text-white h-full overflow-y-auto scrollbar-thin scrollbar-thumb-gray-700 scrollbar-track-gray-900" id="chatui-chat">
   {#each $messages as { kind, text }, index (index)}
     <div class={`flex ${kind === 'right' ? 'justify-end' : 'justify-start'} m-1`} key={index}>
-      <div class="w-full p-2 rounded-lg shadow-md bg-gray-700">
-        <div class="text-gray-200">{text}</div>
+      <div class={`max-w-xs p-2 rounded-lg shadow-md ${kind === 'right' ? 'bg-blue-500 text-white' : 'bg-gray-700 text-gray-200'}`}>
+        <div>{text}</div>
       </div>
     </div>
   {/each}
