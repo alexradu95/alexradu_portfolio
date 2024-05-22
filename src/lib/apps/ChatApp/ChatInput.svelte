@@ -15,7 +15,7 @@
   <input
     id="chatui-input"
     type="text"
-    class="chatui-input flex-grow p-2 border border-gray-300 rounded"
+    class="chatui-input flex-grow p-2 border border-gray-600 bg-gray-700 text-white rounded"
     placeholder="Enter your message..."
     on:keydown={(event) => { if (event.key === "Enter") handleSend(); }}
     bind:value={$prompt}

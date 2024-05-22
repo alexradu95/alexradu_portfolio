@@ -5,11 +5,11 @@
   export let messages = writable<Message[]>([]);
 </script>
 
-<div class="chatui-chat flex flex-col space-y-2 overflow-y-auto max-h-96 p-2" id="chatui-chat">
+<div class="chatui-chat flex flex-col space-y-2 overflow-y-auto max-h-96 p-2 bg-gray-900 text-white" id="chatui-chat">
   {#each $messages as { kind, text }, index (index)}
     <div class={`msg ${kind}-msg flex ${kind === 'right' ? 'justify-end' : 'justify-start'}`} key={index}>
-      <div class="msg-bubble max-w-xs p-2 rounded-lg shadow-md bg-gray-200">
-        <div class="msg-text text-gray-800">{text}</div>
+      <div class="msg-bubble max-w-xs p-2 rounded-lg shadow-md bg-gray-700">
+        <div class="msg-text text-gray-200">{text}</div>
       </div>
     </div>
   {/each}

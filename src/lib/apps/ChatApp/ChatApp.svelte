@@ -16,11 +16,11 @@
 </script>
 
 <App title="Chat Application">
-  <div class="flex flex-col items-center p-4 space-y-4 bg-gray-100 min-h-screen">
+  <div class="flex flex-col items-center p-4 space-y-4 bg-gray-900 text-white min-h-screen">
     <button class="chatui-btn bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-700" on:click={() => { chat_ui.asyncInitChat(updateMessage).catch((error) => console.log(error)); }}>
       Download Model
     </button>
-    <div class="chatui w-full max-w-2xl bg-white shadow-md rounded-lg p-4 space-y-4">
+    <div class="chatui w-full max-w-2xl bg-gray-800 shadow-md rounded-lg p-4 space-y-4">
       <ChatMessages {messages} />
       <ChatInput {prompt} on:send={handleSend} />
     </div>
