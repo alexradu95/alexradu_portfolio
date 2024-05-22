@@ -1,9 +1,9 @@
 <script>
 
-    import {Node, Svelvet} from "svelvet";
+import {Node, Svelvet} from "svelvet";
 import CurrentHourNode from './CurrentHourNode.svelte';
 import HelloNode from './HelloNode.svelte';
-    import ExampleNode from "$lib/components/application/ExampleNode.svelte";
+import ExampleNode from "$lib/components/application/ExampleNode.svelte";
 
 </script>
 
@@ -29,4 +29,3 @@ import HelloNode from './HelloNode.svelte';
         </div>
     </Node>
 </Svelvet>
-    import ExampleNode from './ExampleNode.svelte';
