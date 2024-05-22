@@ -6,13 +6,17 @@
   import ChatInput from "./ChatInput.svelte";
   import ChatMessages from "./ChatMessages.svelte";
 
-  const handleSend = () => {
+  const handleSend = async () => {
+    if (!chat_ui.isChatLoaded()) {
+      await chat_ui.initChat(updateMessage);
+    }
     chat_ui.onGenerate($prompt, updateMessage, (stats: string) => runtimeStats.set(stats)).catch(error => console.log(error));
   };
 
-  onMount(() => {
-    const initializer = new LLMChatInitializer(chat_ui.engine);
-    initializer.asyncInitChat(updateMessage).catch(error => console.log(error));
+  onMount(async () => {
+    if (!chat_ui.isChatLoaded()) {
+      await chat_ui.initChat(updateMessage);
+    }
   });
 </script>
 

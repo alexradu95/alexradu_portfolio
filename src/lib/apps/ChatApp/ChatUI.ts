@@ -45,8 +45,15 @@ export class ChatUI {
     return this.chatRequestChain;
   }
 
-  private async asyncGenerate(prompt: string, messageUpdate: (kind: string, text: string, append: boolean) => void, setRuntimeStats: (runtimeStats: string) => void) {
+  public async initChat(messageUpdate: (kind: string, text: string, append: boolean) => void) {
     await this.initializer.asyncInitChat(messageUpdate);
+  }
+
+  public isChatLoaded() {
+    return this.chatLoaded;
+  }
+
+  private async asyncGenerate(prompt: string, messageUpdate: (kind: string, text: string, append: boolean) => void, setRuntimeStats: (runtimeStats: string) => void) {
     this.requestInProgress = true;
     if (prompt === "") {
       this.requestInProgress = false;
