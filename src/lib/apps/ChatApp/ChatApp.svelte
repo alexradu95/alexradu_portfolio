@@ -1,10 +1,9 @@
 <script lang="ts">
   import { onMount } from "svelte";
-  import App from "$lib/components/application/App.svelte";
   import { chat_ui, updateMessage, messages, prompt, runtimeStats } from "./ChatUI";
-  import { LLMChatInitializer } from "./LLMChatInitializer";
   import ChatInput from "./ChatInput.svelte";
   import ChatMessages from "./ChatMessages.svelte";
+  import App from '$lib/components/application/App.svelte';
 
   let isLoading = false;
 
@@ -34,6 +33,6 @@
       </div>
     {:else}
       <ChatMessages {messages} />
-      <ChatInput {prompt} on:send={handleSend} class="fixed bottom-0 left-0 right-0" {isLoading} />
+      <ChatInput {prompt} on:send={handleSend} {isLoading} />
     {/if}
 </App>
