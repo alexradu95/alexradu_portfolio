@@ -11,7 +11,11 @@
     if (isLoading) return;
     isLoading = true;
     if (!chat_ui.isChatLoaded()) {
+      console.log("Initializing chat...");
+      console.log("Initializing chat...");
       await chat_ui.initChat(updateMessage);
+      console.log("Chat initialized.");
+      console.log("Chat initialized.");
     }
     chat_ui.onGenerate($prompt, updateMessage, (stats: string) => runtimeStats.set(stats)).catch(error => console.log(error));
     isLoading = false;
