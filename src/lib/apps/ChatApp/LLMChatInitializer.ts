@@ -28,7 +28,7 @@ export class LLMChatInitializer {
     this.chatLoaded = true;
   }
 
-  private async unloadChat() {
+  public async unloadChat() {
     await this.engine.unload();
     this.chatLoaded = false;
   }

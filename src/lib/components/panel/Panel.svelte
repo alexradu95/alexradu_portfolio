@@ -4,15 +4,11 @@
     import Icon from '@iconify/svelte';
 
     const check = (appName) => {
-        for (let i = 0; i < $openedApps.length; i++) {
-            if ($openedApps[i].id === appName) {
-                return false;
-            }
-        }
+        return !$openedApps.some(app => app.id === appName);
     }
 
     const openApp = (App, Name) => {
-        if ($openedApps.length === 0 || check(Name) !== false) {
+        if ($openedApps.length === 0 || check(Name)) {
             $openedApps = [...$openedApps, { id: Name, app: App }];
         } else {
             $openedApps = $openedApps.filter((item) => item.id !== Name);

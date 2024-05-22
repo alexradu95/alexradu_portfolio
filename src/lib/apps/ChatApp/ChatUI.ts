@@ -70,7 +70,7 @@ export class ChatUI {
     } catch (err) {
       messageUpdate("error", "Generate error, " + (err?.toString() ?? ""), true);
       console.log(err);
-      await this.unloadChat();
+      await this.initializer.unloadChat();
     }
     this.requestInProgress = false;
   }
