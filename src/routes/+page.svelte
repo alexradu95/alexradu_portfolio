@@ -1,7 +1,6 @@
 <script>
 
+import App from "$lib/components/application/App.svelte";
 </script>
 
-<Svelvet style="width: 100vw; height: 100vh;">
-
-</div>
+<App></App>
