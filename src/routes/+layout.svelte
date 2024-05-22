@@ -2,4 +2,6 @@
     import "../app.css";
 </script>
 
-<slot />
+<div style="border: 5px solid orange; padding: 10px;">
+    <slot />
+</div>
