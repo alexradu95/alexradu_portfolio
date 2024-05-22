@@ -4,7 +4,6 @@
   import { chat_ui, updateMessage, messages, prompt, runtimeStats } from "./ChatUI";
   import ChatInput from "./ChatInput.svelte";
   import ChatMessages from "./ChatMessages.svelte";
-  import ChatControls from "./ChatControls.svelte";
 
   const handleSend = () => {
     chat_ui.onGenerate($prompt, updateMessage, (stats: string) => runtimeStats.set(stats)).catch(error => console.log(error));
