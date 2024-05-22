@@ -3,4 +3,4 @@
 import App from "$lib/components/application/App.svelte";
 </script>
 
-<App></App>
+<App style="height: 100vh;"></App>
