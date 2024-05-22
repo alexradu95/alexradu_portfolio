@@ -3,6 +3,7 @@
     import {Node, Svelvet} from "svelvet";
 import CurrentHourNode from './CurrentHourNode.svelte';
 import HelloNode from './HelloNode.svelte';
+    import ExampleNode from "$lib/components/application/ExampleNode.svelte";
 
 </script>
 
