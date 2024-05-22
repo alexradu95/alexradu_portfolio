@@ -9,7 +9,7 @@
 
   const scrollToBottom = () => {
     if (chatContainer) {
-      chatContainer.scrollTop = chatContainer.scrollHeight;
+      chatContainer.scrollTop = chatContainer.scrollHeight - chatContainer.clientHeight + 5;
     }
   };
 
