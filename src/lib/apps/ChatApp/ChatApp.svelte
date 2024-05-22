@@ -315,11 +315,3 @@
   </div>
 
 </App>
-
-
-
-<style>
-
-  /* Add your styles here if needed */
-
-</style>
