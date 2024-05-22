@@ -26,7 +26,7 @@
   });
 </script>
 
-<App title="Chat Application">
+<App>
     {#if isLoading}
       <div class="flex items-center justify-center h-full">
         <p class="text-white">Loading Model, please wait...</p>
