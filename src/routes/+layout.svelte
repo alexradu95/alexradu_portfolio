@@ -13,7 +13,7 @@
         </span>
     </div>
 {:else}
-    <Svelvet>
+    <Svelvet style="width: 100vw; height: 100vh;">
         <slot />
     </Svelvet>
 {/if}
