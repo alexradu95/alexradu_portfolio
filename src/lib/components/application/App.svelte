@@ -14,4 +14,8 @@ import HelloNode from './HelloNode.svelte';
     <Node id="hello" bgColor="green" label="Hello Node">
         <HelloNode />
     </Node>
+    <Node id="example" bgColor="yellow" label="Example Node">
+        <ExampleNode />
+    </Node>
 </Svelvet>
+    import ExampleNode from './ExampleNode.svelte';
