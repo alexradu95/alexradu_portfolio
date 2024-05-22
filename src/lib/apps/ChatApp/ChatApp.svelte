@@ -6,12 +6,25 @@
   import ChatInput from "./ChatInput.svelte";
   import ChatMessages from "./ChatMessages.svelte";
 
+  let isLoading = false;
+
   const handleSend = async () => {
+    if (isLoading) return;
+    isLoading = true;
     if (!chat_ui.isChatLoaded()) {
       await chat_ui.initChat(updateMessage);
     }
     chat_ui.onGenerate($prompt, updateMessage, (stats: string) => runtimeStats.set(stats)).catch(error => console.log(error));
+    isLoading = false;
   };
+
+  onMount(async () => {
+    if (!chat_ui.isChatLoaded()) {
+      isLoading = true;
+      await chat_ui.initChat(updateMessage);
+      isLoading = false;
+    }
+  });
 
   onMount(async () => {
     if (!chat_ui.isChatLoaded()) {
