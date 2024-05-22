@@ -2,6 +2,7 @@
   import { createEventDispatcher } from "svelte";
   import { writable } from "svelte/store";
   import { chat_ui, messages, runtimeStats } from "./ChatUI";
+  import { LLMChatInitializer } from "./LLMChatInitializer";
 
   export let prompt = writable("");
 
@@ -17,7 +18,10 @@
 </script>
 
 <div class="chatui-inputarea flex items-center space-x-2 bg-gray-800 p-4 fixed bottom-0 left-0 right-0">
-  <button class="chatui-btn bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-700" on:click={() => { chat_ui.asyncInitChat(updateMessage).catch((error) => console.log(error)); }}>
+  <button class="chatui-btn bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-700" on:click={() => { 
+    const initializer = new LLMChatInitializer(chat_ui.engine);
+    initializer.asyncInitChat(updateMessage).catch((error) => console.log(error)); 
+  }}>
     Download Model
   </button>
   <input

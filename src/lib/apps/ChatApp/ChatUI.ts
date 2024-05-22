@@ -7,7 +7,10 @@ export const messages = writable<Message[]>([]);
 export const prompt = writable("");
 export const runtimeStats = writable("");
 
+import { LLMChatInitializer } from "./LLMChatInitializer";
+
 export class ChatUI {
+  private initializer: LLMChatInitializer;
   private engine: MLCEngineInterface;
   private chatLoaded = false;
   private requestInProgress = false;
@@ -16,6 +19,7 @@ export class ChatUI {
 
   constructor(engine: MLCEngineInterface) {
     this.engine = engine;
+    this.initializer = new LLMChatInitializer(engine);
   }
 
   private pushTask(task: () => Promise<void>) {
@@ -41,32 +45,8 @@ export class ChatUI {
     return this.chatRequestChain;
   }
 
-  async asyncInitChat(messageUpdate: (kind: string, text: string, append: boolean) => void) {
-    if (this.chatLoaded) return;
-    this.requestInProgress = true;
-    messageUpdate("init", "", true);
-    this.engine.setInitProgressCallback((report: { text: string }) => messageUpdate("init", report.text, false));
-    try {
-      const selectedModel = "Llama-3-8B-Instruct-q4f32_1"; // Adjust model as needed
-      await this.engine.reload(selectedModel);
-    } catch (err) {
-      messageUpdate("error", "Init error, " + (err?.toString() ?? ""), true);
-      console.log(err);
-      await this.unloadChat();
-      this.requestInProgress = false;
-      return;
-    }
-    this.requestInProgress = false;
-    this.chatLoaded = true;
-  }
-
-  private async unloadChat() {
-    await this.engine.unload();
-    this.chatLoaded = false;
-  }
-
   private async asyncGenerate(prompt: string, messageUpdate: (kind: string, text: string, append: boolean) => void, setRuntimeStats: (runtimeStats: string) => void) {
-    await this.asyncInitChat(messageUpdate);
+    await this.initializer.asyncInitChat(messageUpdate);
     this.requestInProgress = true;
     if (prompt === "") {
       this.requestInProgress = false;

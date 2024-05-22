@@ -2,6 +2,7 @@
   import { onMount } from "svelte";
   import App from "$lib/components/application/App.svelte";
   import { chat_ui, updateMessage, messages, prompt, runtimeStats } from "./ChatUI";
+  import { LLMChatInitializer } from "./LLMChatInitializer";
   import ChatInput from "./ChatInput.svelte";
   import ChatMessages from "./ChatMessages.svelte";
 
@@ -10,7 +11,8 @@
   };
 
   onMount(() => {
-    chat_ui.asyncInitChat(updateMessage).catch(error => console.log(error));
+    const initializer = new LLMChatInitializer(chat_ui.engine);
+    initializer.asyncInitChat(updateMessage).catch(error => console.log(error));
   });
 </script>
 
