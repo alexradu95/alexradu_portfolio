@@ -3,10 +3,9 @@
     import Panel from "$lib/components/panel/Panel.svelte";
     import { scale } from 'svelte/transition';
     import { onMount } from 'svelte';
-    import Experience from '../lib/apps/experience/ExperienceApp.svelte';
 
     onMount(async () => {
-		$openedApps = [...$openedApps, {id: "Experience", app: Experience}];
+		$openedApps = [...$openedApps, {id: "", app: null}];
 	});
 </script>
 

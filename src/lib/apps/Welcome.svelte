@@ -1,6 +1,5 @@
 <script>
     import App from "$lib/components/application/App.svelte";
-    import SocialMediaButtons from "../components/widgets/SocialMediaButtons.svelte";
 </script>
 
 <App title="Welcome">
@@ -17,7 +16,6 @@
         </ol>
 
         <h3 class="text-xl font-bold mt-4">You can find me on the following websites:</h3>
-        <SocialMediaButtons size=40></SocialMediaButtons>
 
     </div>
 </App>
