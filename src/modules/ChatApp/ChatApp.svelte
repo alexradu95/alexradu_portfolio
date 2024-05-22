@@ -30,13 +30,11 @@
   });
 </script>
 
-<App>
-    {#if isLoading}
-      <div class="flex items-center justify-center h-full">
-        <p class="text-white">Loading Model, please wait...</p>
-      </div>
-    {:else}
-      <ChatMessages {messages} />
-      <ChatInput {prompt} on:send={handleSend} {isLoading} />
-    {/if}
-</App>
+{#if isLoading}
+  <div class="flex items-center justify-center h-full">
+    <p class="text-white">Loading Model, please wait...</p>
+  </div>
+{:else}
+  <ChatMessages {messages} />
+  <ChatInput {prompt} on:send={handleSend} {isLoading} />
+{/if}
