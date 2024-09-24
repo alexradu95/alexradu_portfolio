@@ -1,17 +1,11 @@
 <script>
     import Icon from '@iconify/svelte';
     import projects from '$lib/data/WorkExperience';
-    import App from "$lib/components/application/App.svelte";
+    import App from "$lib/components/common/App.svelte";
     import ExperienceItem from './ExperienceItem.svelte';
 
     let current = 0;
 </script>
-
-<style>
-    .text-shadow {
-        text-shadow: 2px 2px #000; /* adjust as needed */
-    }
-</style>
 
 <App title="Experience" resizable={false}>
     <div class="flex h-auto">

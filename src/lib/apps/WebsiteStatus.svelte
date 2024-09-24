@@ -1,6 +1,6 @@
 <script>
     import { onMount } from 'svelte';
-    import App from "$lib/components/application/App.svelte";
+    import App from "$lib/components/common/App.svelte";
 
     let groupedCommits = {};
 

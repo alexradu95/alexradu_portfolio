@@ -1,5 +1,5 @@
 <script>
-    import App from "$lib/components/application/App.svelte";
+    import App from "$lib/components/common/App.svelte";
     import SocialMediaButtons from "../components/widgets/SocialMediaButtons.svelte";
 </script>
 
