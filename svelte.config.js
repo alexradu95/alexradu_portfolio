@@ -1,7 +1,16 @@
-import adapter from '@sveltejs/adapter-vercel';
+// svelte.config.js
+import { sveltePreprocess } from 'svelte-preprocess';
 
-export default {
-	kit: {
-		adapter: adapter(), // currently the adapter does not take any options
-	}
+/**
+ * This will add autocompletion if you're working with SvelteKit
+ *
+ * @type {import('@sveltejs/kit').Config}
+ */
+const config = {
+	preprocess: sveltePreprocess({
+		// ...svelte-preprocess options
+	}),
+	// ...other svelte options
 };
+
+export default config;
