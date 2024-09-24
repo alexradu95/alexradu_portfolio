@@ -1,9 +1,21 @@
 const workExperience = [
 	{
-		companyName: "Waters",
-		title: "Senior Software Engineer at Waters",
-		startDate: "Mar 2022",
+		companyName: "Medius - Expensya",
+		title: "Software Engineer & Scrum Master",
+		startDate: "Aug 2023",
 		endDate: "Present",
+		languages: ["C#", "TypeScript", "PowerShell", "SQL"],
+		technologies: [".NET", "Angular", "MySQL Database"],
+		description: [
+			],
+		url: "https://www.medius.com/",
+		icon: "mdi:credit-cards"
+	},
+	{
+		companyName: "Waters",
+		title: "Software Engineer",
+		startDate: "Mar 2022",
+		endDate: "Aug 2023",
 		languages: ["C#", "TypeScript", "PowerShell", "Groovy"],
 		technologies: [".NET", "Angular", "Oracle Database", "WixInstaller"],
 		description: [
