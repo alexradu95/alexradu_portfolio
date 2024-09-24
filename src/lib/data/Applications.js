@@ -4,7 +4,6 @@ import GodotWrapper from '$lib/apps/GodotWrapper.svelte';
 import ExperienceApp from '$lib/apps/experience/ExperienceApp.svelte';
 import Welcome from '$lib/apps/Welcome.svelte';
 import WebsiteStatus from '$lib/apps/WebsiteStatus.svelte'
-import AFrame from '$lib/apps/aframe/AFrame.svelte'
 
 export let openedApps = writable([]);
 
