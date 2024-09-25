@@ -1,6 +1,6 @@
 <script>
     import App from "$lib/components/common/App.svelte";
-    import SocialMediaButtons from "../components/widgets/SocialMediaButtons.svelte";
+    import SocialMediaButtons from "../widgets/SocialMediaButtons.svelte";
 </script>
 
 <App title="Welcome">
